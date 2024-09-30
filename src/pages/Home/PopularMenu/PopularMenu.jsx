@@ -2,6 +2,7 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import MenuItem from "../../../Components/MenuItem/MenuItem";
 import useMenu from "../../../hooks/useMenu";
+import { Link } from "react-router-dom";
 // import { data } from "autoprefixer";
 
 const PopularMenu = () => {
@@ -18,9 +19,11 @@ const PopularMenu = () => {
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
-      <button className='btn btn-outline border-0 border-b-[3px] text-xl'>
+      <Link
+        to='/menu'
+        className='btn btn-outline border-0 border-b-[3px] text-xl'>
         View Full Menu
-      </button>
+      </Link>
     </section>
   );
 };

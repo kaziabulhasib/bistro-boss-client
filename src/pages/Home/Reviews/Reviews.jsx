@@ -15,7 +15,7 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 const Reviews = () => {
   const [review, setReview] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://bistro-boss-server-tau-umber.vercel.app/review")
       .then((res) => res.json())
       .then((data) => {
         setReview(data);
