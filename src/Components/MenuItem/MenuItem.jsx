@@ -4,7 +4,7 @@ const MenuItem = ({ item }) => {
     <div className='flex items-start justify-between gap-8 my-6 px-4'>
       <div>
         <img
-          className='w-32 h-28'
+          className='w-24 lg:w-40 h-16 lg:h-28 '
           style={{ borderRadius: "0px 120px 120px 120px" }}
           src={image}
           alt=''

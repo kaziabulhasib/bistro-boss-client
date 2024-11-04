@@ -14,7 +14,7 @@ const AdminHome = () => {
   });
   return (
     <div>
-      <h2 className='text-3xl'>
+      <h2 className='text-xl lg:text-3xl'>
         <span>Hi, welcome </span>
         {user?.displayName ? user.displayName : "back"}
       </h2>

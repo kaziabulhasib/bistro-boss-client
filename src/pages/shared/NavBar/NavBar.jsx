@@ -105,7 +105,10 @@ const NavBar = () => {
                     {user?.displayName || "user name not found"}
                   </button>
                   {/* log out   */}
-                  <Link onClick={handleLogout} to='/register' className='btn'>
+                  <Link
+                    onClick={handleLogout}
+                    to='/register'
+                    className='btn btn-sm'>
                     Sign Out
                   </Link>
                 </li>
@@ -115,7 +118,7 @@ const NavBar = () => {
         ) : (
           <>
             <Link
-              className='btn btn-sm glass text-slate-200 hover:text-slate-500 '
+              className='btn btn-sm px-6 glass text-white hover:text-slate-500 '
               to='/login'>
               Login
             </Link>

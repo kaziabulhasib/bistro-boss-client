@@ -11,8 +11,12 @@ const Cart = () => {
   return (
     <div>
       <div className='flex justify-evenly my-12'>
-        <h1 className='text-4xl font-semibold'>Total orders: {cart.length}</h1>
-        <h1 className='text-4xl font-semibold'>Total price:{totalPrice}</h1>
+        <h1 className='text-xl lg:text-3xl font-semibold'>
+          Total orders: {cart.length}
+        </h1>
+        <h1 className='text-xl lg:text-3xl font-semibold'>
+          Total price:{totalPrice}
+        </h1>
         {cart.length ? (
           <Link to='/dashboard/payment'>
             <button className='btn btn-primary'>Pay</button>
