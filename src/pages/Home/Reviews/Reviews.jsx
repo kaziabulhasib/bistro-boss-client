@@ -22,7 +22,7 @@ const Reviews = () => {
       });
   }, []);
   return (
-    <div>
+    <div className='max-w-7xl  mx-auto'>
       <SectionTitle
         text='---What Our Clients Say---'
         title='Testimonials'></SectionTitle>

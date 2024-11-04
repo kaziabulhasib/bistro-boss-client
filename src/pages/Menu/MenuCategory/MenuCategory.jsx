@@ -4,9 +4,9 @@ import Cover from "../../shared/Cover/Cover";
 
 const MenuCategory = ({ items, title, text, img }) => {
   return (
-    <div className='my-14'>
+    <div className='my-14 '>
       {title && <Cover img={img} title={title} text={text}></Cover>}
-      <div className='grid grid-cols-1 lg:grid-cols-2 mt-20'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 mt-20 max-w-7xl  mx-auto'>
         {items.slice(0, 6).map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}

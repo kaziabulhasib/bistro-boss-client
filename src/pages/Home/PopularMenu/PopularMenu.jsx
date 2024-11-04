@@ -10,7 +10,7 @@ const PopularMenu = () => {
   const popular = menu.filter((item) => item.category === "popular");
 
   return (
-    <section className='text-center my-14'>
+    <section className='text-center my-14 max-w-7xl  mx-auto'>
       <SectionTitle
         text='---Check it out---'
         title='FROM OUR MENU'></SectionTitle>

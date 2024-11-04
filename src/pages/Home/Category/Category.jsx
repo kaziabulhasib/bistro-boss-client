@@ -10,7 +10,7 @@ import slide5 from "../../../assets/home/slide5.jpg";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 const Category = () => {
   return (
-    <div>
+    <div className='max-w-7xl  mx-auto'>
       <SectionTitle
         text='---From 11:00am to 10:00pm---'
         title='ORDER ONLINE'></SectionTitle>

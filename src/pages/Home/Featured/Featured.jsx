@@ -12,7 +12,7 @@ const Featured = () => {
           text='---Check it out---'
           title='FROM OUR MENU'></SectionTitle>
       </div>
-      <div className='flex justify-center items-center px-36 py-20 gap-16'>
+      <div className='flex flex-col lg:flex-row justify-center items-center lg:px-36 px-4 lg:py-20 py-8 lg:gap-16 gap-8 bg-opacity-50 '>
         <div>
           <img src={featured} alt='' />
         </div>

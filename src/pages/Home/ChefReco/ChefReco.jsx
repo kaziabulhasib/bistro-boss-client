@@ -16,11 +16,11 @@ const ChefReco = () => {
       });
   }, []);
   return (
-    <div>
+    <div className='max-w-7xl  mx-auto'>
       <SectionTitle
         text='---Check it out---'
         title="chef's choice"></SectionTitle>
-      <div className='flex gap-6 my-8'>
+      <div className='flex flex-col lg:flex-row gap-6 my-8'>
         {menu.map((item) => (
           <ChefItem key={item._id} item={item}></ChefItem>
         ))}

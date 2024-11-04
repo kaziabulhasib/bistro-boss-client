@@ -32,7 +32,10 @@ const Order = () => {
         img={orderImg}
         title='OUR SHOP'
         text='Would you like to try a dish?'></Cover>
-      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+      <Tabs
+        className='max-w-7xl  mx-auto'
+        selectedIndex={tabIndex}
+        onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>Salad</Tab>
           <Tab>Pizza</Tab>

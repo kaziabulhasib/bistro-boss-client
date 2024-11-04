@@ -33,7 +33,7 @@ const SocialLogin = () => {
     // }
   };
   return (
-    <div className='p-8'>
+    <div className='p-8 text-center'>
       <button onClick={handleGoogleLogin} className='btn mx-6 '>
         <FaGoogle className='text-xl'></FaGoogle>
         Google

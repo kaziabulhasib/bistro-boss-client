@@ -43,7 +43,7 @@ const NavBar = () => {
       )}
       <li>
         <Link to='/dashboard/cart'>
-          <button className='btn'>
+          <button className='btn btn-sm'>
             <FaCartShopping className='text-xl' />
             <div className='badge badge-secondary'>+ {cart.length}</div>
           </button>
@@ -52,9 +52,9 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className='navbar  fixed z-10 shadow-lg px-4 top-0 text-white font-extrabold text-xl  bg-[#15151580] opacity-90 max-w-7xl'>
+    <div className='navbar min-h-12 py-0  fixed top-0 right-0 w-full z-10 bg-[#15151580] opacity-90 shadow-lg px-6 lg:px-16  text-white font-extrabold text-xl   '>
       <div className='navbar-start'>
-        <div className='dropdown'>
+        <div className='dropdown '>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -72,12 +72,12 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
+            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#15151580] opacity-90 rounded-box w-52'>
             {links}
           </ul>
         </div>
         <Link to='/' className='btn btn-ghost text-xl'>
-          Kabab Plaza
+          Bistro Boss
         </Link>
       </div>
       <div className='navbar-center hidden items-center  lg:flex'>
