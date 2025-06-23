@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import toast from "react-hot-toast";
@@ -11,6 +11,10 @@ const NavBar = () => {
   const [isAdmin] = useAdmin();
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
+
+  // Add state for mobile menu
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleLogout = () => {
     logOut()
       .then((result) => {
@@ -20,29 +24,43 @@ const NavBar = () => {
       })
       .catch((error) => console.log(error));
   };
+
+  // Close menu after click
+  const handleMenuItemClick = () => setMenuOpen(false);
+
   const links = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to='/' onClick={handleMenuItemClick}>
+          Home
+        </Link>
       </li>
       <li>
-        <Link to='/menu'>Menu</Link>
+        <Link to='/menu' onClick={handleMenuItemClick}>
+          Menu
+        </Link>
       </li>
       <li>
-        <Link to='/order/salads'>Order</Link>
+        <Link to='/order/salads' onClick={handleMenuItemClick}>
+          Order
+        </Link>
       </li>
       {user && isAdmin && (
         <li>
-          <Link to='/dashboard/adminhome'>Admin home</Link>
+          <Link to='/dashboard/adminhome' onClick={handleMenuItemClick}>
+            Admin home
+          </Link>
         </li>
       )}
       {user && !isAdmin && (
         <li>
-          <Link to='/dashboard/userhome'>User home</Link>
+          <Link to='/dashboard/userhome' onClick={handleMenuItemClick}>
+            User home
+          </Link>
         </li>
       )}
       <li>
-        <Link to='/dashboard/cart'>
+        <Link to='/dashboard/cart' onClick={handleMenuItemClick}>
           <button className='btn btn-sm'>
             <FaCartShopping className='text-xl' />
             <div className='badge badge-secondary'>+ {cart.length}</div>
@@ -51,11 +69,16 @@ const NavBar = () => {
       </li>
     </>
   );
+
   return (
     <div className='navbar min-h-12 py-0  fixed top-0 right-0 w-full z-10 bg-[#15151580] opacity-90 shadow-lg px-6 lg:px-16  text-white font-extrabold text-xl   '>
       <div className='navbar-start'>
-        <div className='dropdown '>
-          <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
+        <div className='dropdown'>
+          <div
+            tabIndex={0}
+            role='button'
+            className='btn btn-ghost lg:hidden'
+            onClick={() => setMenuOpen(!menuOpen)}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-5 w-5'
@@ -72,7 +95,9 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#15151580] opacity-90 rounded-box w-52'>
+            className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#15151580] opacity-90 rounded-box w-52 ${
+              menuOpen ? "block" : "hidden"
+            }`}>
             {links}
           </ul>
         </div>
